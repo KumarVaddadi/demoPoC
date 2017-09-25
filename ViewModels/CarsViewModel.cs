@@ -4,28 +4,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PortableApp.Models;
-using PortableApp.Services;
-using PortableApp.Constants;
+using demoPoC.Models;
+using demoPoC.Services;
+using demoPoC.Constants;
+using demoPoC.Views;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Xamarin.Forms;
+using System.Diagnostics;
 
-namespace PortableApp.ViewModels
+namespace demoPoC.ViewModels
 {
     public class CarsViewModel : BaseViewModel
     {
-        private Cars _carsSelected;
+        private Consist _consistSelected;
         public ObservableCollection<Cars> _Cars { get; set; }
 
-        public Cars CarsSelected
+        public Consist ConsistSelected
         {
-            get { return _carsSelected; }
+            get { return _consistSelected; }
             set
             {
-                if (_carsSelected != value)
+                if (_consistSelected != value)
                 {
-                    _carsSelected = value;
-                    if (_carsSelected != null)
+                    _consistSelected = value;
+                    if (_consistSelected != null)
                     {
-                        _navigation.PushAsync(new CarsDetailPage(_carsSelected));
+                        _navigation.PushAsync(new ConsistDetailPage(_consistSelected));
                     }
                 }
             }
@@ -60,8 +65,8 @@ namespace PortableApp.ViewModels
             {
                 IsBusy = true;
 
-                var carsService = new CarsService();
-                var items = await carsService.GetCarsAsync(string.Format("{0}{1}", ServerConstants.CarsEndpoint, ServerConstants.METHOD_GET_MOVIES));
+                var carsService = new CarServices();
+                var items = await carsService.GetCarsAsync(string.Format("{0}{1}", ServerConstants.CarsEndpoint, ServerConstants.METHOD_GET_CARS));
                 _Cars.Clear();
                 foreach (var item in items)
                     _Cars.Add(item);

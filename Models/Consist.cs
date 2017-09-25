@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PortableApp.Models
+namespace demoPoC.Models
 {
     public class Consist
     {
@@ -20,7 +20,7 @@ namespace PortableApp.Models
          */
 
         public string GPRSIpAddress { get; set; }
-        public int Name { get; set; }
+        public int ConsistName { get; set; }
         public int NrOfCars { get; set; }
         public string SoldTime { get; set; }
         public int StateId { get; set; }

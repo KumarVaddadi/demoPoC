@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PortableApp.Models;
+using demoPoC.Models;
 using MvvmHelpers;
 
-namespace PortableApp.ViewModels
+namespace demoPoC.ViewModels
 {
     public class CarsDetailViewModel: BaseViewModel
     {

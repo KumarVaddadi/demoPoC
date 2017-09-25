@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PortableApp.Models;
-using PortableApp.RestClients;
+using demoPoC.Models;
+using demoPoC.RestClients;
 
-namespace PortableApp.Services
+namespace demoPoC.Services
 {
     public class CarServices
     {
