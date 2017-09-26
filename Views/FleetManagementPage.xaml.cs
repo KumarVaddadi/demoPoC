@@ -15,18 +15,19 @@ namespace demoPoC.Views
 	public partial class FleetManagementPage : ContentPage
 	{
         //private ConsistDetailViewModel consistDetailViewModel;
-  //      public FleetManagementPage (Consist consistSelected)
-		//{
-		//	InitializeComponent ();
-  //          //BindingContext = consistDetailViewModel = new ConsistDetailViewModel();
-  //          //consistDetailViewModel.SetData(consistSelected);
-  //          BindingContext = new ConsistViewModel();
-  //      }
-
-        public FleetManagementPage()
+        public FleetManagementPage()//Consist consistSelected)
         {
             InitializeComponent();
-            BindingContext = new ConsistViewModel();
+            BindingContext = new ConsistViewModel(Navigation);
+            //BindingContext = consistDetailViewModel = new ConsistDetailViewModel();
+            //consistDetailViewModel.SetData(consistSelected);
+            //BindingContext = new ConsistViewModel();
         }
-	}
+
+        //public FleetManagementPage()
+        //{
+        //    InitializeComponent();
+        //    BindingContext = new ConsistViewModel();
+        //}
+    }
 }

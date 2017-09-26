@@ -13,17 +13,17 @@ namespace demoPoC
         {
             InitializeComponent();
 
-            MainPage = new demoPoC.Views.FleetManagementPage();
+            //MainPage = new demoPoC.Views.FleetManagementPage();
 
-            //MainPage = new NavigationPage(new demoPoC.Views.HomePageTab()
-            //{
-            //    Title = "Fleet Management",
-
-
-            //});
+            MainPage = new NavigationPage(new demoPoC.Views.HomePage()
+            {
+                Title = "Fleet Management",
 
 
-           
+            });
+
+
+
 
         }
 
