@@ -10,9 +10,9 @@ namespace demoPoC.ViewModels
 {
     public class CarsDetailViewModel: BaseViewModel
     {
-        private Cars _cars;
+        private Car _cars;
 
-        public Cars _Cars
+        public Car _Cars
         {
             get { return _cars; }
             set { SetProperty(ref _cars, value); }
@@ -24,7 +24,7 @@ namespace demoPoC.ViewModels
 
         }
 
-        public void SetData(Cars cars)
+        public void SetData(Car cars)
         {
             _Cars = cars;
 

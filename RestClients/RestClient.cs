@@ -16,7 +16,8 @@ namespace demoPoC.RestClients
             using (var httpClient = new HttpClient())
             {
                 var json = await httpClient.GetStringAsync(uri);
-                return JsonConvert.DeserializeObject<List<T>>(json);
+                var ret =  JsonConvert.DeserializeObject<List<T>>(json);
+                return ret;
 
             }
         }

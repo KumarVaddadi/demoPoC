@@ -8,9 +8,9 @@
         </StackLayout>
     </ContentPage.Content>
     <ListView   x:Name="CarsListView" HasUnevenRows="True"
-                SeparatorVisibility="None" ItemsSource="{Binding _Movies}" 
+                SeparatorVisibility="None" ItemsSource="{Binding _Consist}" 
                 IsPullToRefreshEnabled="True"
-                SelectedItem="{Binding ConsistSelected}" RefreshCommand="{Binding GetCarCommand}"
+                SelectedItem="{Binding ConsistSelected}" RefreshCommand="{Binding GetConsistCommand}"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}">
         <ListView.ItemTemplate>
             <DataTemplate>
@@ -33,7 +33,7 @@
                                         <RowDefinition Height="0.3*"/>
                                     </Grid.RowDefinitions>
 
-                                    <Label Grid.Row="0" VerticalTextAlignment="Center"  Text="{Binding CarName}"/>
+                                    <Label Grid.Row="0" VerticalTextAlignment="Center"  Text="{Binding Name}"/>
                                     <Label Grid.Row="1"  Text="{Binding ConsistName}"/>
                                     <Label Grid.Row="2" Text="{Binding Type}"/>
                                 </Grid>

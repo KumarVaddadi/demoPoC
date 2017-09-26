@@ -1,4 +1,6 @@
-﻿using System;
+﻿using demoPoC.Models;
+using demoPoC.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,19 @@ namespace demoPoC.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FleetManagementPage : ContentPage
 	{
-		public FleetManagementPage ()
-		{
-			InitializeComponent ();
-		}
+        //private ConsistDetailViewModel consistDetailViewModel;
+  //      public FleetManagementPage (Consist consistSelected)
+		//{
+		//	InitializeComponent ();
+  //          //BindingContext = consistDetailViewModel = new ConsistDetailViewModel();
+  //          //consistDetailViewModel.SetData(consistSelected);
+  //          BindingContext = new ConsistViewModel();
+  //      }
+
+        public FleetManagementPage()
+        {
+            InitializeComponent();
+            BindingContext = new ConsistViewModel();
+        }
 	}
 }

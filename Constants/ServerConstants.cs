@@ -9,9 +9,9 @@ namespace demoPoC.Constants
     public class ServerConstants
     {
         //******************** URL's *****************************//
-        public const string CarsEndpoint = "https://fm.bt.ab2ls.ch/Portal.Web/api/Fleets/getFleetData?fleetName=AC3K1_10";
+        public const string Endpoint = "https://fm.bt.ab2ls.ch/Portal.Web/api/Fleets/";
 
         /***** API Names *******/
-        public const string METHOD_GET_CARS = "Cars";
+        public const string METHOD_GET_METHOD = "getFleetData";
     }
 }

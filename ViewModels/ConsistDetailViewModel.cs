@@ -21,7 +21,7 @@ namespace demoPoC.ViewModels
         public ConsistDetailViewModel()
         {
 
-
+            //Nothing is there in the Constructor
         }
 
         public void SetData(Consist consist)

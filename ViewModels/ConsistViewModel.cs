@@ -5,20 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using demoPoC.Models;
-using demoPoC.Services;
-using demoPoC.Constants;
-using demoPoC.Views;
 using System.Collections.ObjectModel;
+using demoPoC.Views;
 using System.Windows.Input;
 using Xamarin.Forms;
+using demoPoC.Services;
+using demoPoC.Constants;
 using System.Diagnostics;
 
 namespace demoPoC.ViewModels
 {
-    public class CarsViewModel : BaseViewModel
+    public class ConsistViewModel: BaseViewModel
     {
         private Consist _consistSelected;
-        public ObservableCollection<Car> _Cars { get; set; }
+        public ObservableCollection<Consist> _Consist { get; set; }
 
         public Consist ConsistSelected
         {
@@ -37,25 +37,31 @@ namespace demoPoC.ViewModels
         }
 
 
-        ICommand getCarsCommand;
-        public ICommand GetCarsCommand =>
-            getCarsCommand ??
-            (getCarsCommand = new Command(async () => await GetCars()));
+        ICommand getConsistCommand;
+        public ICommand GetConsistCommand =>
+            getConsistCommand ??
+            (getConsistCommand = new Command(async () => await GetConsist()));
 
         public INavigation _navigation;
-        public CarsViewModel(INavigation navigation)
+
+        public ConsistViewModel()
         {
-            _Cars = new ObservableCollection<Car>();
-            GetCars();
+            _Consist = new ObservableCollection<Consist>();
+            GetConsist();
+        }
+        public ConsistViewModel(INavigation navigation)
+        {
+            _Consist = new ObservableCollection<Consist>();
+            GetConsist();
             _navigation = navigation;
         }
         bool isBusy = false;
         public bool IsBusy
         {
-            get { return isBusy; }
+            get { return isBusy = false; }
             set { isBusy = value; OnPropertyChanged(); }
         }
-        private async Task GetCars()
+        private async Task GetConsist()
         {
             if (IsBusy)
                 return;
@@ -65,11 +71,12 @@ namespace demoPoC.ViewModels
             {
                 IsBusy = true;
 
-                var carsService = new CarServices();
-                var items = await carsService.GetCarsAsync(string.Format("{0}{1}", ServerConstants.Endpoint, ServerConstants.METHOD_GET_METHOD));
-                _Cars.Clear();
+                var consistService = new ConsistService();
+                string url = string.Format("{0}{1}{2}", ServerConstants.Endpoint, ServerConstants.METHOD_GET_METHOD, "?fleetName=AC3K1_10");
+                var items = await consistService.GetConsistAsync(url);
+                _Consist.Clear();
                 foreach (var item in items)
-                    _Cars.Add(item);
+                    _Consist.Add(item);
             }
             catch (Exception ex)
             {

@@ -8,8 +8,8 @@
         </StackLayout>
     </ContentPage.Content>
 
-    <ListView   x:Name="CarsListView" HasUnevenRows="True"
-                SeparatorVisibility="None" ItemsSource="{Binding _Movies}" 
+    <ListView   x:Name="ConsistListView" HasUnevenRows="True"
+                SeparatorVisibility="None" ItemsSource="{Binding _Consist}" 
                 IsPullToRefreshEnabled="True"
                 SelectedItem="{Binding ConsistSelected}" RefreshCommand="{Binding GetConsistCommand}"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}">
@@ -34,7 +34,7 @@
                                         <RowDefinition Height="0.3*"/>
                                     </Grid.RowDefinitions>
 
-                                    <Label Grid.Row="0" VerticalTextAlignment="Center"  Text="{Binding ConsistName}"/>
+                                    <Label Grid.Row="0" VerticalTextAlignment="Center"  Text="{Binding Name}"/>
                                     <Label Grid.Row="1"  Text="{Binding SoldTime}"/>
                                     <Label Grid.Row="2" Text="{Binding GPRSIpAddress}"/>
                                 </Grid>

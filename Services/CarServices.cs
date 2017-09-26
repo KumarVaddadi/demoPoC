@@ -10,29 +10,29 @@ namespace demoPoC.Services
 {
     public class CarServices
     {
-        public async Task<List<Cars>> GetCarsAsync(string uri)
+        public async Task<List<Car>> GetCarsAsync(string uri)
         {
-            RestClient<Cars> restClient = new RestClient<Cars>();
+            RestClient<Car> restClient = new RestClient<Car>();
             var CarsList = await restClient.GetAsync(uri);
             return CarsList;
         }
 
-        public async Task PostCarsAsync(Cars Cars, string uri)
+        public async Task PostCarsAsync(Car Car, string uri)
         {
-            RestClient<Cars> restClient = new RestClient<Cars>();
-            var teamsList = await restClient.PostAsync(Cars, uri);
+            RestClient<Car> restClient = new RestClient<Car>();
+            var teamsList = await restClient.PostAsync(Car, uri);
         }
 
-        public async Task PutCarsAsync(int id, Cars Cars, string uri)
+        public async Task PutCarsAsync(int id, Car Car, string uri)
         {
-            RestClient<Cars> restClient = new RestClient<Cars>();
-            var teamsList = await restClient.PutAsync(id, Cars, uri);
+            RestClient<Car> restClient = new RestClient<Car>();
+            var teamsList = await restClient.PutAsync(id, Car, uri);
         }
 
-        public async Task DeleteCarsAsync(int id, Cars Cars, string uri)
+        public async Task DeleteCarsAsync(int id, Car Car, string uri)
         {
-            RestClient<Cars> restClient = new RestClient<Cars>();
-            var teamsList = await restClient.DeleteAsync(id, Cars, uri);
+            RestClient<Car> restClient = new RestClient<Car>();
+            var teamsList = await restClient.DeleteAsync(id, Car, uri);
         }
     }
 }
